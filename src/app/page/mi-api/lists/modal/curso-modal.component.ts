@@ -39,12 +39,15 @@ export class CursoModalComponent implements OnInit {
         ...this.curso,
         fechaInicio: this.formatDate(new Date(this.curso.fechaInicio)),
         fechaFin: this.formatDate(new Date(this.curso.fechaFin)),
-        contenido: this.curso.contenido.join('\n'), // Asegúrate de que se muestra como texto (uno por línea)
-        instructores: this.curso.instructores.join('\n'), // Lo mismo para instructores
-        estudiantes: this.curso.estudiantes.map(est => `${est.nombre}, ${est.email}, ${est.completado}, ${est.completado}}`).join('\n'), // Solo los nombres de estudiantes
+        contenido: this.curso.contenido.join('\n'),
+        instructores: this.curso.instructores.join('\n'),
+        estudiantes: this.curso.estudiantes
+          .map(est => `${est.nombre}, ${est.email}, ${est.completado}, ${est.calificacion || ''}`)
+          .join('\n'),
         certificados: this.curso.certificados
-          .map(cert => `${cert.estudianteEmail}, ${cert.urlCertificado}, ${cert.codigoCertificado}`).join('\n'), // Correo, URL y código
-        imagenes: this.curso.imagenes?.join('\n') || '' // Une las imágenes en una sola cadena para mostrar
+          .map(cert => `${cert.estudianteEmail}, ${cert.codigoCertificado}, ${cert.urlCertificado}`)
+          .join('\n'),
+        imagenes: this.curso.imagenes?.join('\n') || ''
       });
     }
   }  
@@ -58,18 +61,21 @@ export class CursoModalComponent implements OnInit {
       const formValue = this.form.value;
       const curso: CursoTrading = {
         ...formValue,
-        _id: this.curso?._id || '', // Asignamos el _id si está disponible
+        _id: this.curso?._id ,
         contenido: formValue.contenido.split('\n').filter((item: string) => item.trim()),
         instructores: formValue.instructores.split('\n').filter((item: string) => item.trim()),
-        estudiantes: formValue.estudiantes.split('\n').map((nombre: string) => ({
-          nombre,
-          email: '', // Asigna un valor si es necesario
-          fechaInscripcion: new Date(),
-          completado: false,
-          calificacion: null
-        })),
-        certificados: formValue.certificados.split('\n').map((certificado: string) => {
-          const [estudianteEmail, urlCertificado, codigoCertificado] = certificado.split(',').map((item: string) => item.trim());
+        estudiantes: formValue.estudiantes.split('\n').map((linea: string) => {
+          const [nombre, email, completado, calificacion] = linea.split(',').map((item: string) => item.trim());
+          return {
+            nombre,
+            email,
+            fechaInscripcion: new Date(),
+            completado: completado === 'true',
+            calificacion: calificacion ? parseFloat(calificacion) : null
+          };
+        }),
+        certificados: formValue.certificados.split('\n').map((linea: string) => {
+          const [estudianteEmail, codigoCertificado, urlCertificado] = linea.split(',').map((item: string) => item.trim());
           return {
             estudianteEmail,
             codigoCertificado,
@@ -78,9 +84,16 @@ export class CursoModalComponent implements OnInit {
         }),
         imagenes: formValue.imagenes.split('\n').filter((item: string) => item.trim())
       };
+  
+      console.log('Datos enviados al servidor:', curso);
+  
       this.save.emit(curso);
+    } else {
+      console.error('El formulario no es válido:', this.form.value);
     }
   }
+  
+  
 
   onCancel(): void {
     this.cancel.emit();

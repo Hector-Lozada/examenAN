@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CursoService } from '../services/curso.service';
-import { Curso } from '../interfaces/curso.interface';
+import { CursoTrading } from '../interfaces/curso.interface';
 import { CursoModalComponent } from '../modal/curso-modal.component';
 
 @Component({
@@ -12,9 +12,9 @@ import { CursoModalComponent } from '../modal/curso-modal.component';
   styleUrls: ['./table.component.css']
 })
 export class CursoTableComponent implements OnInit {
-  cursos: Curso[] = [];
+  cursos: CursoTrading[] = [];
   showModal = false;
-  selectedCurso: Curso | null = null;
+  selectedCurso: CursoTrading | null = null;
 
   constructor(private cursoService: CursoService) {}
 
@@ -30,7 +30,7 @@ export class CursoTableComponent implements OnInit {
     );
   }
 
-  openModal(curso?: Curso): void {
+  openModal(curso?: CursoTrading): void {
     this.selectedCurso = curso || null;
     this.showModal = true;
     console.log(this.showModal);  // Para verificar si la variable se actualiza correctamente
@@ -43,7 +43,7 @@ export class CursoTableComponent implements OnInit {
     this.selectedCurso = null;
   }
 
-  onSave(curso: Curso): void {
+  onSave(curso: CursoTrading): void {
     if (curso._id) {
       this.cursoService.updateCurso(curso._id, curso).subscribe(() => {
         this.loadCursos();

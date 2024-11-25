@@ -1,6 +1,6 @@
 // src/app/page/mi-api/lists/lists.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Curso } from './interfaces/curso.interface';
+import { CursoTrading } from './interfaces/curso.interface';
 import { CursoService } from './services/curso.service';
 import { CursoTableComponent } from "./table/table.component";
 
@@ -12,8 +12,8 @@ import { CursoTableComponent } from "./table/table.component";
   styleUrls: ['./lists.component.css']
 })
 export class ListsComponent implements OnInit {
-  cursos: Curso[] = [];
-  selectedCurso: Curso | null = null; // Para el modal
+  cursos: CursoTrading[] = [];
+  selectedCurso: CursoTrading | null = null; // Para el modal
 
   constructor(private cursoService: CursoService) { }
 
@@ -30,18 +30,18 @@ export class ListsComponent implements OnInit {
     });
   }
 
-  agregarCurso(curso: Curso): void {
+  agregarCurso(curso: CursoTrading): void {
     this.cursoService.createCurso(curso).subscribe({
       next: () => this.cargarCursos(),
       error: (err) => console.error('Error al agregar curso:', err)
     });
   }
 
-  editarCurso(curso: Curso): void {
+  editarCurso(curso: CursoTrading): void {
     this.selectedCurso = curso; // Mostrar en el modal
   }
 
-  actualizarCurso(curso: Curso): void {
+  actualizarCurso(curso: CursoTrading): void {
     if (curso._id) {
       this.cursoService.updateCurso(curso._id, curso).subscribe({
         next: () => {

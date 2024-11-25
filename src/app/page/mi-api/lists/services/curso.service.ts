@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Curso } from '../interfaces/curso.interface';
+import { CursoTrading } from '../interfaces/curso.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +11,16 @@ export class CursoService {
 
   constructor(private http: HttpClient) {}
 
-  getCursos(): Observable<{ cursos: Curso[] }> {
-    return this.http.get<{ cursos: Curso[] }>(this.apiUrl);
+  getCursos(): Observable<{ cursos: CursoTrading[] }> {
+    return this.http.get<{ cursos: CursoTrading[] }>(this.apiUrl);
   }
 
-  createCurso(curso: Omit<Curso, '_id'>): Observable<Curso> {
-    return this.http.post<Curso>(`${this.apiUrl}`, curso);
+  createCurso(curso: Omit<CursoTrading, '_id'>): Observable<CursoTrading> {
+    return this.http.post<CursoTrading>(`${this.apiUrl}`, curso);
   }
 
-  updateCurso(id: string, curso: Partial<Curso>): Observable<Curso> {
-    return this.http.put<Curso>(`${this.apiUrl}/${id}`, curso);
+  updateCurso(id: string, curso: Partial<CursoTrading>): Observable<CursoTrading> {
+    return this.http.put<CursoTrading>(`${this.apiUrl}/${id}`, curso);
   }
 
   deleteCurso(id: string): Observable<void> {

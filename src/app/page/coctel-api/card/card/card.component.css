@@ -1,0 +1,58 @@
+/* Ajustes generales para las tarjetas */
+.card {
+  width: 22rem; /* Ancho mayor para las tarjetas */
+  min-height: 500px; /* Altura mínima para asegurar que las tarjetas tengan el mismo tamaño */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Ajustes para la imagen dentro de la tarjeta */
+.card-img-top {
+  width: 100%;
+  height: 300px; /* Mayor altura para las imágenes */
+  object-fit: cover; /* Ajusta la imagen para cubrir sin deformarse */
+  border-bottom: 2px solid #ddd;
+}
+
+/* Ajustes de los textos */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Botón de 'Más info' */
+.btn-primary {
+  background-color: #000000;
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+}
+
+/* Spinner de carga SVG */
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

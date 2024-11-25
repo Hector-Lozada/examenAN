@@ -1,0 +1,116 @@
+.modal-lg {
+    max-width: 80%; /* Ajusta el ancho del modal al 80% de la pantalla */
+}
+
+
+img{
+    width: 100px;
+    height: 200px;
+}
+
+.principal img{
+    width: 290px;
+    height: 453px;
+}
+
+.planeta{
+    width: auto;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.personaje{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    width: 350px;
+}
+
+/* Modal general */
+.modal-content {
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Encabezado del modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-tittle {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Botón de cerrar */
+.btn-close i {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Imagen principal del personaje */
+.img-custom-size {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Información del personaje */
+.modal-body p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.modal-body h4 {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Sección de transformaciones */
+.personaje img {
+  max-width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.personaje p {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Planeta Original */
+.planeta {
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.col-6 {
+  padding: 10px;
+}
+
+/* Ajustes de filas */
+.row {
+  margin-top: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+

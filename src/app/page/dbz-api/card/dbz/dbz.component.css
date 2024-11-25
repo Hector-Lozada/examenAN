@@ -1,0 +1,68 @@
+/* Contenedor general */
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Tarjetas de personajes */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Título de la tarjeta (nombre del personaje) */
+.card-title {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Texto en la tarjeta (ID del personaje) */
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Botón para más información */
+.btn-primary {
+  background-color: #000000;
+  border-color: #000000;
+  border-radius: 25px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #929292;
+  border-color: #000000;
+}
+
+/* Estilo para el SVG de carga */
+svg {
+  margin-top: 10px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilo para el estado sin personajes */
+.ng-template p {
+  font-size: 1rem;
+  color: #ff0000;
+  text-align: center;
+  font-weight: bold;
+}

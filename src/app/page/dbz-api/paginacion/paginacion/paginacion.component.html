@@ -1,0 +1,10 @@
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item " [ngClass]="{'disabled':!lastUrl}">
+      <a class="page-link" (click)="loadSiguientesPersonajes(lastUrl!)">Previous</a>
+    </li>
+    <li class="page-item" [ngClass]="{'disabled':!nextUrl}">
+      <a class="page-link"  (click)="loadSiguientesPersonajes(nextUrl!)">Next</a>
+    </li>
+  </ul>
+</nav>

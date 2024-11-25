@@ -1,0 +1,74 @@
+<div class="modal">
+  <div class="modal-content">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>{{curso ? 'Editar' : 'Crear'}} Curso</h2>
+
+      <div class="form-group">
+        <label for="titulo">Título</label>
+        <input id="titulo" type="text" class="form-control" formControlName="titulo">
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" class="form-control" formControlName="descripcion" rows="3"></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="duracionHoras">Duración (Horas)</label>
+          <input id="duracionHoras" type="number" class="form-control" formControlName="duracionHoras">
+        </div>
+
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input id="precio" type="number" class="form-control" formControlName="precio">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fechaInicio">Fecha Inicio</label>
+          <input id="fechaInicio" type="date" class="form-control" formControlName="fechaInicio">
+        </div>
+
+        <div class="form-group">
+          <label for="fechaFin">Fecha Fin</label>
+          <input id="fechaFin" type="date" class="form-control" formControlName="fechaFin">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contenido">Contenido (uno por línea)</label>
+        <textarea id="contenido" class="form-control" formControlName="contenido" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="instructores">Instructores (uno por línea)</label>
+        <textarea id="instructores" class="form-control" formControlName="instructores" rows="4"></textarea>
+      </div>
+
+      <!-- Nuevos campos de imagenes, estudiantes y certificados -->
+      <div class="form-group">
+        <label for="imagenes">Imágenes (URLs, uno por línea)</label>
+        <textarea id="imagenes" class="form-control" formControlName="imagenes" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="estudiantes">Estudiantes (uno por línea)</label>
+        <textarea id="estudiantes" class="form-control" formControlName="estudiantes" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="certificados">Certificados (uno por línea)</label>
+        <textarea id="certificados" class="form-control" formControlName="certificados" rows="4"></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+          {{curso ? 'Actualizar' : 'Crear'}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="modal fade" #modalElement>
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{coctel['strDrink']}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6  ">
+                        <img src="{{coctel['strDrinkThumb']}}" class="imagenprincipal d-block mx-auto img-fluid" alt="">
+                    </div>
+                    <div class="col-6">
+                        <p>ID: {{coctel['idDrink']}}</p>
+                        <p>Categoria: {{coctel['strCategory']}}</p>
+                        <p>Tipo De Bebida: {{coctel['strAlcoholic']}}</p>
+                        <p>Se sirve en: {{coctel['strGlass']}}</p>
+
+                        <div>
+                            <span><b>Ingredientes</b></span>
+                            <ul class="list-unstyled">
+                                <li *ngIf="coctel['strIngredient1']">{{ coctel['strIngredient1'] }}</li>
+                                <li *ngIf="coctel['strIngredient2']">{{ coctel['strIngredient2'] }}</li>
+                                <li *ngIf="coctel['strIngredient3']">{{ coctel['strIngredient3'] }}</li>
+                                <li *ngIf="coctel['strIngredient4']">{{ coctel['strIngredient4'] }}</li>
+                                <li *ngIf="coctel['strIngredient5']">{{ coctel['strIngredient5'] }}</li>
+                                <li *ngIf="coctel['strIngredient6']">{{ coctel['strIngredient6'] }}</li>
+                                <li *ngIf="coctel['strIngredient7']">{{ coctel['strIngredient7'] }}</li>
+                                <li *ngIf="coctel['strIngredient8']">{{ coctel['strIngredient8'] }}</li>
+                                <li *ngIf="coctel['strIngredient9']">{{ coctel['strIngredient9'] }}</li>
+                                <li *ngIf="coctel['strIngredient10']">{{ coctel['strIngredient10'] }}</li>
+                                <li *ngIf="coctel['strIngredient11']">{{ coctel['strIngredient11'] }}</li>
+                                <li *ngIf="coctel['strIngredient12']">{{ coctel['strIngredient12'] }}</li>
+                                <li *ngIf="coctel['strIngredient13']">{{ coctel['strIngredient13'] }}</li>
+                                <li *ngIf="coctel['strIngredient14']">{{ coctel['strIngredient14'] }}</li>
+                                <li *ngIf="coctel['strIngredient15']">{{ coctel['strIngredient15'] }}</li>
+                            </ul>
+                        </div>
+                        <span><b>Instruciones</b></span>
+                        <p>{{coctel['strInstructionsES']}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

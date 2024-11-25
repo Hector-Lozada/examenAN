@@ -1,0 +1,74 @@
+/* General Modal Styles */
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #343a40;
+  color: #f8f9fa;
+  padding: 20px;
+  border-bottom: none;
+}
+
+.modal-tittle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: #f8f9fa;
+}
+
+.btn-close:hover {
+  color: #e74c3c;
+}
+
+.modal-body {
+  padding: 20px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Image in Modal */
+.modal-body img {
+  border-radius: 5px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Pokemon Info */
+.modal-body p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.modal-body h4 {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  text-transform: capitalize;
+  color: #343a40;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+/* List Styles */
+.modal-body ul {
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
+.modal-body li {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 4px 0;
+  list-style-type: none
+}

@@ -1,0 +1,54 @@
+<div class="modal fade" #modalElement tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-tittle">{{pokemonAll.name}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="bi bi-x"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <img class="col-8" src="{{pokemonAll.sprites.other?.['official-artwork']?.front_default}}" alt="">
+                    <!-- Info Pokemon -->
+                    <div class="col-4 ">
+                        <p class="ms-1">ID: {{pokemonAll.id}}</p>
+                        <p class="ms-1">Altura: {{pokemonAll.height}}</p>
+                        <p class="ms-1">Peso: {{pokemonAll.weight}}</p>
+                        <p class="ms-1">Experiencia: {{pokemonAll.base_experience}}</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <h4 class="text-center">Habilidades:</h4>
+                            <ul class="list-unstyled">
+                                <li *ngFor="let ability of pokemonAll.abilities">
+                                    {{ability.ability.name | titlecase}}
+                                    <small *ngIf="ability.is_hidden">(Oculta)</small>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <h4 class="text-center">Tipos:</h4>
+                            <ul class="list-unstyled">
+                                <li *ngFor="let type of pokemonAll.types">
+                                    {{type.type.name | titlecase}}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4">
+                            <h4 class="text-center">Estadísticas:</h4>
+                            <ul class="list-unstyled">
+                                <li *ngFor="let stat of pokemonAll.stats">
+                                    {{stat.stat.name | titlecase}}: {{stat.base_stat}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

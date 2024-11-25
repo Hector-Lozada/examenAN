@@ -1,0 +1,11 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" 
+    [ngClass]="{'disabled':!previust && previust != ''}"
+    ><a class="page-link"  (click)="loadPokemon(previust!)">Previous</a></li>
+
+    <li class="page-item" 
+    [ngClass]="{'disabled':!nextUrl && nextUrl!=''}"
+    ><a class="page-link"  (click)="loadPokemon(nextUrl!)">Next</a></li>
+  </ul>
+</nav>

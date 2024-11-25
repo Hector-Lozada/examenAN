@@ -1,0 +1,116 @@
+.imagenprincipal{
+    width: 350px;
+    height: auto;
+}
+
+/* Imagen principal del cóctel en el modal */
+.img-modal {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave alrededor de la imagen */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out; /* Añade una animación cuando se hace hover */
+}
+
+.img-modal:hover {
+  transform: scale(1.05); /* Zoom al pasar el ratón sobre la imagen */
+}
+
+/* Estilo de la cabecera del modal */
+.modal-header {
+  background-color: #000000; /* Color de fondo azul */
+  color: white; /* Texto en blanco */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.modal-header .btn-close {
+  color: white;
+}
+
+/* Título del cóctel */
+.modal-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Estilo del cuerpo del modal */
+.modal-body {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Secciones de información del cóctel */
+.modal-body p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.modal-body span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  margin-top: 10px;
+  color: #000000;
+}
+
+/* Lista de ingredientes */
+.list-unstyled {
+  margin: 0;
+  padding-left: 0;
+}
+
+.list-unstyled li {
+  font-size: 1rem;
+  padding: 5px 0;
+  color: #555;
+}
+
+/* Footer del modal */
+.modal-footer {
+  background-color: #f9f9f9;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #000000;
+  border-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #929292; /* Color más oscuro al pasar el ratón */
+}
+
+/* General */
+.modal-content {
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Sombra más intensa para todo el modal */
+}
+
+/* Ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  .img-modal {
+    margin-bottom: 10px;
+  }
+  .modal-body p {
+    font-size: 1rem;
+  }
+}
